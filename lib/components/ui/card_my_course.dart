@@ -24,8 +24,8 @@ class CardMyCourse extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(12)),
-              child: Image.network(
-                courseThumbnail,
+              child: Image.asset(
+                course.image as String,
                 width: 80,
                 height: 80,
                 fit: BoxFit.cover,
@@ -52,14 +52,14 @@ class CardMyCourse extends StatelessWidget {
                           borderRadius: BorderRadius.circular(99),
                         ),
                         clipBehavior: Clip.hardEdge,
-                        child: Image.network(
-                          avatarUrl,
+                        child: Image.asset(
+                          course.instructor.image,
                           width: 20,
                           height: 20,
                           fit: BoxFit.cover,
                         ),
                       ),
-                      Text(course.instructor),
+                      Text(course.instructor.name),
                     ],
                   ),
                   SizedBox(
