@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 
 class Lessons extends StatelessWidget {
+  const Lessons({super.key});
   @override
   Widget build(BuildContext context) {
     final List<Map<String, Object>> lessons = [
       {
-        "title": "Bab 1: Pengenalan",
+        "title": "Bab 1: Introduction",
         "items": ["Apa itu Flutter?", "Instalasi Flutter", "Struktur Proyek"],
       },
       {
-        "title": "Bab 2: Widget Dasar",
+        "title": "Bab 2: Basic Widget",
         "items": ["Text", "Container", "Row & Column"],
       },
     ];

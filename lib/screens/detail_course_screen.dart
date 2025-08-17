@@ -2,7 +2,6 @@ import 'package:course_online/components/screens/detail_course/bio_instructor.da
 import 'package:course_online/components/screens/detail_course/description.dart';
 import 'package:course_online/components/screens/detail_course/lessons.dart';
 import 'package:course_online/constants/color.dart';
-import 'package:course_online/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 
@@ -40,7 +39,6 @@ class DetailCourseScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   right: 16,
                   left: 16,
-                  top: 16,
                   bottom: 70,
                 ),
                 child: Column(
@@ -50,7 +48,7 @@ class DetailCourseScreen extends StatelessWidget {
                     ),
                     ClipRRect(
                       borderRadius: BorderRadiusGeometry.circular(20),
-                      child: Image.network(courseThumbnail),
+                      child: Image.asset("assets/images/fluuter.png"),
                     ),
                     SizedBox(
                       height: 20,
@@ -85,7 +83,7 @@ class DetailCourseScreen extends StatelessWidget {
                     // aksi tombol
                   },
                   child: const Text(
-                    "Mulai Kursus",
+                    "Enroll Now",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

@@ -1,6 +1,6 @@
 import 'package:course_online/components/screens/home/popular_mentors/avatar_mentor.dart';
 import 'package:course_online/components/ui/header_section.dart';
-import 'package:course_online/constants/constant.dart';
+import 'package:course_online/dummy/dummy_popular_mentors.dart';
 import 'package:flutter/material.dart';
 
 class PopularMentors extends StatelessWidget {
@@ -18,11 +18,12 @@ class PopularMentors extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(
-              10,
+              dummyPopularMentors.length,
               (index) => Padding(
                 padding: EdgeInsetsGeometry.only(right: 16),
                 child: AvatarMentor(
-                  avatarUrl: avatarUrl,
+                  avatarUrl: dummyPopularMentors[index].image,
+                  name: dummyPopularMentors[index].name,
                 ),
               ),
             ),

@@ -16,7 +16,6 @@ class _MyCourseScreenState extends State<MyCourseScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _searchController.dispose();
     super.dispose();
   }

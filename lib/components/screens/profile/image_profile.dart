@@ -20,9 +20,16 @@ class ImageProfile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 clipBehavior: Clip.antiAlias,
-                child: Image.network(
-                  "https://avatar.iran.liara.run/public",
+                child: Image.asset(
+                  "assets/images/avatar.png",
                   fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(
+                      Icons.person,
+                      size: 60,
+                      color: Colors.white,
+                    );
+                  },
                 ),
               ),
               Positioned(

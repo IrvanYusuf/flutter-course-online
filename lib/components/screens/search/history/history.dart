@@ -7,7 +7,7 @@ class History extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> _historys = [
+    List<String> historys = [
       "React Js",
       "Next Js",
       "Python",
@@ -25,7 +25,7 @@ class History extends StatelessWidget {
         Column(
           spacing: 10,
           children: List.generate(
-            _historys.length,
+            historys.length,
             (int index) => Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +38,7 @@ class History extends StatelessWidget {
                       size: 16,
                     ),
                     Text(
-                      _historys[index],
+                      historys[index],
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
