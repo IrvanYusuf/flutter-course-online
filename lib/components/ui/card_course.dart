@@ -1,16 +1,16 @@
-import 'package:course_online/constants/constant.dart';
+import 'package:course_online/models/course.model.dart';
 import 'package:course_online/utils/truncate_text.dart';
 import 'package:flutter/material.dart';
 
 class CardCourse extends StatelessWidget {
-  final String title;
-  const CardCourse({super.key, required this.title});
+  final Course course;
+  const CardCourse({super.key, required this.course});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, "/course-detail", arguments: "abc");
+        Navigator.pushNamed(context, "/course-detail", arguments: course.id);
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -23,8 +23,8 @@ class CardCourse extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.network(
-                  courseThumbnail,
+                Image.asset(
+                  course.image as String,
                   width: double.infinity,
                   height: 150,
                   fit: BoxFit.cover,
@@ -37,7 +37,7 @@ class CardCourse extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    Utils.truncate(title, 30),
+                    Utils.truncate(course.name, 30),
                     maxLines: 2,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
@@ -56,14 +56,14 @@ class CardCourse extends StatelessWidget {
                         color: Colors.amber,
                       ),
                       Text(
-                        "4.5",
+                        course.rating.toString(),
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
                       SizedBox(
                         width: 6,
                       ),
                       Text(
-                        "(1k+)",
+                        "(${course.countReviews})",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Colors.grey.shade700,
